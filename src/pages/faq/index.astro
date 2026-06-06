@@ -1,0 +1,17 @@
+---
+import FAQ from "@/components/pages/FAQ";
+import Layout from "@/layouts/Layout.astro";
+
+import { constructMetadata } from '@/lib/seo';
+import { faq } from '@/config/pages.config';
+
+const meta = constructMetadata({
+	title: faq.title,
+	path: '/faq',
+	description: faq.subtitle
+});
+---
+
+<Layout metadata={meta}>
+	<FAQ client:visible />
+</Layout>

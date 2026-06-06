@@ -1,0 +1,84 @@
+---
+import "@/assets/styles/globals.css";
+import SpeedInsights from "@vercel/speed-insights/astro"
+import JsonLd from '@/components/meta/JsonLd';
+import Analytics from '@/components/meta/Analytics';
+import Navbar from "@/components/layouts/Navbar";
+import Footer from "@/components/layouts/Footer";
+
+import { constructMetadata } from "@/lib/seo.ts";
+
+const meta = Astro.props.metadata ?? constructMetadata();
+
+const { title, description, keywords, canonicalUrl, image, siteName, authors, creator, publisher, robots, locale, twitterHandle, favicons, manifest } = meta;
+---
+
+<!doctype html>
+<html lang="en" dir="ltr" data-scroll-behavior="smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords?.join(", ")} />
+		<meta name="robots" content={robots} />
+		<meta name="author" content={authors?.join(", ")} />
+		<meta name="creator" content={creator} />
+		<meta name="publisher" content={publisher} />
+		<meta name="application-name" content={siteName} />
+		<meta name="referrer" content="origin-when-cross-origin" />
+
+		<!-- Canonical -->
+		<link rel="canonical" href={canonicalUrl} />
+
+		<!-- Open Graph -->
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonicalUrl} />
+		<meta property="og:site_name" content={siteName} />
+		<meta property="og:image" content={image} />
+		<meta property="og:locale" content={locale} />
+		<meta property="og:type" content="website" />
+
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={image} />
+		<meta name="twitter:creator" content={twitterHandle} />
+
+		<!-- Favicons -->
+		{favicons.basic.map((fav: any) => (
+			<link rel={fav.rel} href={fav.url} sizes={fav.sizes} type={fav.type} />
+		))}
+		{favicons.android.map((fav: any) => (
+			<link rel={fav.rel} href={fav.url} sizes={fav.sizes} type={fav.type} />
+		))}
+		{favicons.apple.map((fav: any) => (
+			<link rel={fav.rel} href={fav.url} sizes={fav.sizes} />
+		))}
+
+		<!-- Manifest -->
+		<link rel="manifest" href={manifest} />
+
+		<!-- Mobile Web App -->
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-title" content={siteName} />
+		<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+		<JsonLd />
+		<Analytics/>
+		<SpeedInsights />
+	</head>
+	<body class="bg-canvas-page min-h-screen text-text-main">
+		<Navbar client:load />
+		<main class="grow">
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>

@@ -1,0 +1,19 @@
+---
+import NotFound from '@/components/pages/NotFound'
+//import { constructMetadata } from '@/lib/seo';
+import Layout from "@/layouts/Layout.astro";
+
+
+
+
+import { constructMetadata } from '@/lib/seo';
+
+const meta = constructMetadata({
+	title: '404',
+	path: '/404'
+});
+---
+
+<Layout metadata={meta}>
+	<NotFound client:visible />
+</Layout>

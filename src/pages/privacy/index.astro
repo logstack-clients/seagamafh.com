@@ -1,0 +1,21 @@
+---
+import PrivacyPolicy from '@/components/pages/PrivacyPolicy'
+import Layout from "@/layouts/Layout.astro";
+
+import { constructMetadata } from '@/lib/seo';
+import { legal } from '@/config/pages.config';
+import type { LegalContentConfig } from '@/types/pages.types';
+
+type Props = Pick <LegalContentConfig, 'privacy'>;
+
+const { privacy }: Props = legal;
+
+const meta = constructMetadata({
+    title: privacy.title,
+    path: '/privacy'
+});
+---
+
+<Layout metadata={meta}>
+    <PrivacyPolicy client:visible />
+</Layout>

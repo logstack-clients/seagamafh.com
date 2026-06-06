@@ -1,0 +1,7 @@
+export const publicEnv = {
+	SITE_BASE_URL: import.meta.env.PUBLIC_SITE_URL!,
+	WEB3FORMS_ACCESS_KEY: import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY!,
+    GA_ID: import.meta.env.PUBLIC_GA_ID!,
+	CLOUDFLARE_ANALYTICS_TOKEN: import.meta.env.PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN!,
+    GOOGLE_MAPS_API_KEY: import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY!,
+};

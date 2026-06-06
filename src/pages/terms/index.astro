@@ -1,0 +1,21 @@
+---
+import TermsOfUse from '@/components/pages/TermsOfUse'
+import Layout from "@/layouts/Layout.astro";
+
+import { constructMetadata } from '@/lib/seo';
+import { legal } from '@/config/pages.config';
+import type { LegalContentConfig } from '@/types/pages.types';
+
+type Props = Pick <LegalContentConfig, 'terms'>;
+
+const { terms }: Props = legal;
+
+const meta = constructMetadata({
+    title: terms.title,
+    path: '/terms'
+});
+---
+
+<Layout metadata={meta}>
+    <TermsOfUse client:visible />
+</Layout>
