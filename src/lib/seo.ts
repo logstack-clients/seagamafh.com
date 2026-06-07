@@ -34,7 +34,6 @@ export function constructMetadata({
 		locale: siteConfig.locale,
 		twitterHandle: '@seagamafh',
 		favicons: siteConfig.favicons,
-		manifest: siteConfig.favicons.manifest,
-		analytics: siteConfig.analytics,
+		manifest: siteConfig.favicons.manifest
 	};
 }

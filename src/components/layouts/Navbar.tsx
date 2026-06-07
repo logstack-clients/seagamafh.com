@@ -46,7 +46,7 @@ const Navbar: React.FC = () => {
 						alt="Seagam AFH Logo Image"
 						className="w-8 h-8 lg:w-11 lg:h-11 transition-transform group-hover:scale-110"
 					/>
-					<span className="tracking-tight text-text-main text-lg lg:text-2xl whitespace-nowrap">
+					<span className="tracking-tight font-sans text-text-main text-lg lg:text-2xl whitespace-nowrap">
 						{siteConfig.name} <span className="font-light">{siteConfig.subName}</span>
 					</span>
 				</a>

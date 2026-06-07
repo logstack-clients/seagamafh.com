@@ -25,3 +25,6 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 .env*
+
+# ditch & replace with @vercel/analytics/astro
+src/components/meta/Analytics.tsx

@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
 					<div className="lg:col-span-4 flex flex-col gap-5">
 						<a href="/" className="flex items-center gap-2 group w-fit">
 							<img src={footer.logo} alt="Seagam AFH Logo Image" className="w-10 h-10 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6" />
-							<span className="tracking-tight text-xl font-bold text-white transition-opacity group-hover:opacity-95">{siteConfig.name} <span className="font-light text-brand-tertiary">{siteConfig.subName}</span></span>
+							<span className="tracking-tight text-xl font-sans font-bold text-white transition-opacity group-hover:opacity-95">{siteConfig.name} <span className="font-light text-brand-tertiary">{siteConfig.subName}</span></span>
 						</a>
 
 						<p className="text-white/75 text-sm leading-relaxed max-w-sm">{siteConfig.description}</p>

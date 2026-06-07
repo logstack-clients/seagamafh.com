@@ -98,7 +98,7 @@ export interface SiteConfig {
 	priceRange: string;
 	
 	socials: SocialLinkDescriptor[];
-	analytics: AnalyticsConfig; // New Analytics Section
+	analytics: AnalyticsConfig; // New GcAnalytics Section
 	favicons: FaviconsConfig;   // New Favicons Section
 	robots: RobotsConfig;
 	authors: { name: string; url?: string }[];
