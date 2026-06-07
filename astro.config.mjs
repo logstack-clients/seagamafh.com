@@ -9,5 +9,6 @@ export default defineConfig({
     integrations: [react()],
     redirects: {
         "https://www.seagamafh.com/:path*": "https://seagamafh.com/:path*",
+        "https://www.seagam.vercel.app/:path*": "https://seagam.vercel.app/:path*"
     }
 });
