@@ -51,8 +51,7 @@ const Team: React.FC = () => {
 							<img
 								src={person.image}
 								alt={person.name}
-								className="relative w-48 h-48 rounded-full object-cover border-4 border-white shadow-xl group-hover:scale-105 transition-transform duration-500"
-							/>
+								className="relative w-48 h-48 rounded-full object-cover border-4 border-white shadow-xl group-hover:scale-105 transition-transform duration-500" loading="lazy"/>
 						</div>
 						
 						<h3 className="text-xl font-bold text-text-main mb-1">{person.name}</h3>
