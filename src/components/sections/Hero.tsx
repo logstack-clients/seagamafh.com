@@ -64,14 +64,14 @@ const Hero: React.FC = () => {
 					<motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-5 justify-center">
 						<a
 							href={hero.ctaPrimary.href}
-							className="group relative bg-btn-cta hover:bg-btn-cta-hover text-white px-10 py-5 rounded-4xl text-lg font-bold transition-all shadow-medium hover:-translate-y-1 overflow-hidden">
+							className="group relative bg-btn-cta hover:bg-btn-cta-hover text-white px-10 py-5 rounded-4xl text-lg font-bold transition-all shadow-medium hover:-translate-y-1 overflow-hidden" aria-label="Call to action button - schedule tour">
 							<span className="relative z-10">{hero.ctaPrimary.text}</span>
 							<div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
 						</a>
 						
 						<a
 							href={hero.ctaSecondary.href}
-							className="group bg-white/5 backdrop-blur-xl hover:bg-white/10 text-white border border-white/30 px-10 py-5 rounded-4xl text-lg font-bold transition-all hover:-translate-y-1 hover:border-white/50">
+							className="group bg-white/5 backdrop-blur-xl hover:bg-white/10 text-white border border-white/30 px-10 py-5 rounded-4xl text-lg font-bold transition-all hover:-translate-y-1 hover:border-white/50" aria-label="Call to action button - view our services">
 							{hero.ctaSecondary.text}
 						</a>
 					</motion.div>

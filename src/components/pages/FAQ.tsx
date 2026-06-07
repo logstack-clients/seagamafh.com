@@ -34,8 +34,7 @@ const FAQ: React.FC = () => {
 						>
 							<button
 								onClick={() => setOpenIndex(openIndex === index ? null : index)}
-								className="w-full flex items-center justify-between p-6 text-left hover:bg-canvas-alt/30 transition-colors"
-							>
+								className="w-full flex items-center justify-between p-6 text-left hover:bg-canvas-alt/30 transition-colors" aria-label={`Click to view the answer to "${item.question}"`}>
 								<span className="font-bold text-lg text-text-main pr-8">{item.question}</span>
 								<span className={`shrink-0 p-2 rounded-full ${openIndex === index ? 'bg-brand-primary text-white' : 'bg-canvas-alt text-brand-primary'}`}>
                   {openIndex === index ? <LuMinus size={18} /> : <LuPlus size={18} />}
@@ -68,7 +67,7 @@ const FAQ: React.FC = () => {
 				>
 					<h3 className="text-2xl font-bold mb-4">Still have questions?</h3>
 					<p className="mb-8 text-white/80">We're here to help you navigate this important decision.</p>
-					<a href="/#contact" className="inline-block bg-white text-brand-primary px-8 py-3 rounded-full font-bold hover:bg-brand-tertiary transition-colors shadow-lg">
+					<a href="/#contact" className="inline-block bg-white text-brand-primary px-8 py-3 rounded-full font-bold hover:bg-brand-tertiary transition-colors shadow-lg" aria-label="Contact us">
 						Contact Us Today
 					</a>
 				</motion.div>

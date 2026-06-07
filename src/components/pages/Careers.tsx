@@ -82,8 +82,7 @@ const Careers: React.FC = () => {
 							>
 								<button
 									onClick={() => setExpandedJob(expandedJob === job.id ? null : job.id)}
-									className="w-full text-left p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-4"
-								>
+									className="w-full text-left p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-4" aria-label={`Click to view more details about the ${job.title} job`}>
 									<div>
 										<h3 className="text-2xl font-bold text-text-main mb-2">{job.title}</h3>
 										<div className="flex flex-wrap gap-4 text-sm text-text-muted font-medium">
@@ -141,8 +140,7 @@ const Careers: React.FC = () => {
 														
 														<a
 															href={`mailto:${contact.email}?subject=Application for ${job.title}`}
-															className="block w-full text-center bg-btn-cta hover:bg-btn-cta-hover text-white py-3 rounded-xl font-bold transition-all shadow-md hover:shadow-lg active:scale-95"
-														>
+															className="block w-full text-center bg-btn-cta hover:bg-btn-cta-hover text-white py-3 rounded-xl font-bold transition-all shadow-md hover:shadow-lg active:scale-95" aria-label={`Click to apply for the ${job.title} position`}>
 															Apply Now
 														</a>
 														<p className="text-center text-xs text-text-muted mt-3">

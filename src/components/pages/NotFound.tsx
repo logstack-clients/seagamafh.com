@@ -38,15 +38,14 @@ const NotFound: React.FC = () => {
 				<div className="flex flex-col sm:flex-row gap-4 justify-center">
 					<button
 						onClick={() => history.back()}
-						className="flex items-center justify-center gap-2 px-8 py-3 rounded-full border-2 border-brand-primary text-brand-primary font-bold hover:bg-brand-primary/5 transition-colors"
-					>
+						className="flex items-center justify-center gap-2 px-8 py-3 rounded-full border-2 border-brand-primary text-brand-primary font-bold hover:bg-brand-primary/5 transition-colors" aria-label="Go back to the previous page">
 						<LuArrowLeft size={20} />
 						Go Back
 					</button>
 					
 					<a
 						href="/"
-						className="flex items-center justify-center gap-2 px-8 py-3 rounded-full bg-brand-primary text-white font-bold hover:bg-brand-primary/90 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+						className="flex items-center justify-center gap-2 px-8 py-3 rounded-full bg-brand-primary text-white font-bold hover:bg-brand-primary/90 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1" aria-label="Go to the homepage">
 						<LuHouse size={20} />
 						Home Page
 					</a>

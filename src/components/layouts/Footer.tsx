@@ -105,7 +105,7 @@ const Footer: React.FC = () => {
 						</ul>
 
 						{/* Interactive Call to Action button */}
-						<a href="/#contact" className="mt-2 w-full text-center bg-brand-tertiary hover:bg-brand-tertiary/95 text-brand-primary py-2.5 px-4 rounded-lg text-xs font-semibold tracking-wide uppercase transition-all duration-200 transform hover:-translate-y-0.5 hover:shadow-lg active:scale-95">
+						<a href="/#contact" className="mt-2 w-full text-center bg-brand-tertiary hover:bg-brand-tertiary/95 text-brand-primary py-2.5 px-4 rounded-lg text-xs font-semibold tracking-wide uppercase transition-all duration-200 transform hover:-translate-y-0.5 hover:shadow-lg active:scale-95" aria-label="Book a facility tour with us">
 							Book a Facility Tour
 						</a>
 					</div>

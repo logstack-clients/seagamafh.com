@@ -151,8 +151,7 @@ const VirtualTour: React.FC = () => {
 								activeCategory === cat.category
 									? 'text-white shadow-medium scale-105'
 									: 'bg-canvas-card text-text-muted hover:text-brand-primary border border-divider-subtle hover:border-brand-primary/30'
-							}`}
-						>
+							}`} aria-label={`Click to view the ${cat.category}`}>
 							{activeCategory === cat.category && (
 								<motion.div
 									layoutId="activeTab"
@@ -230,8 +229,7 @@ const VirtualTour: React.FC = () => {
 														onMouseEnter={() => setShowHotspot(i)}
 														onMouseLeave={() => setShowHotspot(null)}
 														onClick={() => setShowHotspot(showHotspot === i ? null : i)}
-														className="relative w-10 h-10 flex items-center justify-center cursor-pointer"
-													>
+														className="relative w-10 h-10 flex items-center justify-center cursor-pointer" aria-label={`Show Hotspot ${i}`}>
 														<div className="absolute inset-0 bg-white/30 rounded-full animate-ping" />
 														<div className="absolute inset-1 bg-white/90 backdrop-blur-md rounded-full shadow-[0_0_20px_rgba(255,255,255,0.5)] border border-white flex items-center justify-center transition-transform duration-300 group-hover/hotspot:scale-110">
 															<LuMaximize2 size={16} className="text-brand-primary" />
@@ -367,14 +365,12 @@ const VirtualTour: React.FC = () => {
 								{/* Lightbox Nav Buttons (Desktop) */}
 								<button
 									onClick={handlePrev}
-									className="hidden md:flex absolute left-0 p-4 text-white/50 hover:text-white hover:scale-110 transition-all"
-								>
+									className="hidden md:flex absolute left-0 p-4 text-white/50 hover:text-white hover:scale-110 transition-all" aria-label="view previous">
 									<LuChevronLeft size={48} />
 								</button>
 								<button
 									onClick={handleNext}
-									className="hidden md:flex absolute right-0 p-4 text-white/50 hover:text-white hover:scale-110 transition-all"
-								>
+									className="hidden md:flex absolute right-0 p-4 text-white/50 hover:text-white hover:scale-110 transition-all" aria-label="view next">
 									<LuChevronRight size={48} />
 								</button>
 
