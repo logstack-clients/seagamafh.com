@@ -7,12 +7,11 @@ import { navigations } from '@/config/sections.config';
 const Navbar: React.FC = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [activeSection, setActiveSection] = useState('home');
-	const [location, setLocation] = useState('');
+
+	const location = typeof window !== 'undefined' ? window.location.pathname : '/';
+	const isHomePage = location === '/';
 
 	useEffect(() => {
-		const currentPath = window.location.pathname;
-		setLocation(currentPath);
-		const isHomePage = currentPath === '/';
 		if (!isHomePage) {
 			setActiveSection('');
 			return;
@@ -34,7 +33,7 @@ const Navbar: React.FC = () => {
 
 		window.addEventListener('scroll', handleScroll);
 		return () => window.removeEventListener('scroll', handleScroll);
-	}, []);
+	}, [isHomePage]);
 
 	return (
 		<nav className="fixed top-0 left-0 right-0 z-50 bg-canvas-page/90 backdrop-blur-md shadow-soft py-3 lg:py-4 transition-all duration-300">
