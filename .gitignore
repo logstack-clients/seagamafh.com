@@ -27,4 +27,4 @@ pnpm-debug.log*
 .env*
 
 # ditch & replace with @vercel/analytics/astro
-src/components/meta/Analytics.tsx
+src/components/meta/Analytics.astro
