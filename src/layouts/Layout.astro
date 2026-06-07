@@ -67,8 +67,7 @@ const { title, description, keywords, canonicalUrl, image, siteName, authors, cr
 		<link rel="manifest" href={manifest} />
 
 		{analytics.googleAnalyticsId && (
-			<script is:inline
-				src={`https://www.googletagmanager.com/gtag/js?id=${analytics.googleAnalyticsId}`}/>
+			<script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${analytics.googleAnalyticsId}`}/>
 			<script is:inline id="google-analytics">
 				window.dataLayer = window.dataLayer || [];
 				function gtag(){dataLayer.push(arguments);}

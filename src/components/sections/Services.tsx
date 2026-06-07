@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { motion, type Variants } from 'motion/react';
+import { motion, stagger, type Variants } from 'motion/react';
 import { LuClock, LuHeartPulse, LuUtensils, LuAccessibility } from "react-icons/lu";
 
 import Section from '@/components/layouts/Section';
@@ -19,7 +19,7 @@ const Services: React.FC = () => {
 		visible: {
 			opacity: 1,
 			transition: {
-				staggerChildren: 0.15
+				delayChildren: stagger(0.15)
 			}
 		}
 	};

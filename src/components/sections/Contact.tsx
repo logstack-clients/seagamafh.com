@@ -172,6 +172,7 @@ const Contact: React.FC = () => {
 								rows={3}
 								id="message"
 								placeholder="How can we help you?"
+								autoComplete={'message'}
 								className="w-full px-5 py-3 bg-canvas-page rounded-xl border border-transparent focus:border-brand-secondary/50 focus:bg-canvas-card focus:ring-4 focus:ring-focus-ring/20 outline-none transition-all duration-300 text-text-main resize-none text-sm"
 								{...register("message", {
 									required: "How can we help you?",
@@ -182,8 +183,7 @@ const Contact: React.FC = () => {
 						<button
 							type="submit"
 							disabled={isSubmitting}
-							className="w-full bg-btn-cta hover:bg-btn-cta-hover text-white py-4 rounded-xl font-bold text-base transition-all duration-300 shadow-lg hover:shadow-medium hover:-translate-y-1 active:scale-[0.98]"
-						>
+							className="w-full bg-btn-cta hover:bg-btn-cta-hover text-white py-4 rounded-xl font-bold text-base transition-all duration-300 shadow-lg hover:shadow-medium hover:-translate-y-1 active:scale-[0.98]" aria-label="submit message">
 							Send Request
 						</button>
 						{status.type && (

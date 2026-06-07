@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion, type Variants } from 'motion/react';
+import { motion, stagger, type Variants } from 'motion/react';
 import { hero } from '@/config/sections.config';
 
 const Hero: React.FC = () => {
@@ -8,8 +8,7 @@ const Hero: React.FC = () => {
 		visible: {
 			opacity: 1,
 			transition: {
-				staggerChildren: 0.2,
-				delayChildren: 0.3,
+				delayChildren: stagger(0.2, { startDelay: 0.3 }),
 			}
 		}
 	};
@@ -34,6 +33,9 @@ const Hero: React.FC = () => {
 					<img
 						src={hero.bgImage}
 						alt="Hero Background"
+						fetchPriority="high"
+						decoding="async"
+						loading="eager"
 						className="w-full h-full object-cover brightness-[0.60]"/>
 				</motion.div>
 				<div className="absolute inset-0 bg-linear-to-b from-brand-primary/50 via-transparent to-canvas-page" />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion, type Variants } from 'motion/react';
+import { motion, stagger, type Variants } from 'motion/react';
 import { LuBadgeCheck, LuActivity, LuFlame, LuShieldCheck } from 'react-icons/lu';
 import { trust } from '@/config/sections.config';
 
@@ -14,7 +14,9 @@ const TrustBar: React.FC = () => {
 		hidden: { opacity: 0 },
 		visible: {
 			opacity: 1,
-			transition: { staggerChildren: 0.1, delayChildren: 0.2 }
+			transition: {
+				delayChildren: stagger(0.1, { startDelay: 0.2 }),
+			}
 		}
 	};
 	

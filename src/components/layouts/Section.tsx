@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { motion, stagger } from 'motion/react';
 
 interface SectionProps {
 	id: string;
@@ -22,7 +22,7 @@ const Section: React.FC<SectionProps> = ({ id, className = '', children }) => {
 					transition: {
 						duration: 0.8,
 						ease: [0.22, 1, 0.36, 1], // Custom cubic-bezier for "luxurious" feel
-						staggerChildren: 0.1
+						delayChildren: stagger(0.1)
 					}
 				}
 			}}

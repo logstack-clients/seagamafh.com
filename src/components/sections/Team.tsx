@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion, type Variants } from 'motion/react';
+import { motion, stagger, type Variants } from 'motion/react';
 import { LuQuote } from 'react-icons/lu';
 
 import Section from '@/components/layouts/Section';
@@ -10,7 +10,9 @@ const Team: React.FC = () => {
 		hidden: { opacity: 0 },
 		visible: {
 			opacity: 1,
-			transition: { staggerChildren: 0.2 }
+			transition: {
+				delayChildren: stagger(0.2)
+			}
 		}
 	};
 	
