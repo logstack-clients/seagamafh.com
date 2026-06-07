@@ -1,25 +1,26 @@
 {
+    "$schema": "https://openapi.vercel.sh/vercel.json",
     "redirects": [
         {
-            "source": "/(:path*)",
+            "source": "/(.*)",
             "has": [
                 {
                     "type": "host",
                     "value": "www.seagamafh.com"
                 }
             ],
-            "destination": "https://seagamafh.com/:path*",
+            "destination": "https://seagamafh.com/$1",
             "permanent": true
         },
         {
-            "source": "/(:path*)",
+            "source": "/(.*)",
             "has": [
                 {
                     "type": "host",
                     "value": "www.seagam.vercel.app"
                 }
             ],
-            "destination": "https://seagam.vercel.app/:path*",
+            "destination": "https://seagam.vercel.app/$1",
             "permanent": true
         }
     ]
