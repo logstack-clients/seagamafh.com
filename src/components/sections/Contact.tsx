@@ -117,7 +117,7 @@ const Contact: React.FC = () => {
 									id="phone"
 									type="tel"
 									placeholder="+1 (555) 000-0000"
-									autoComplete={'phone'}
+									autoComplete={'tel'}
 									className="w-full px-5 py-3 bg-canvas-page rounded-xl border border-transparent focus:border-brand-secondary/50 focus:bg-canvas-card focus:ring-4 focus:ring-focus-ring/20 outline-none transition-all duration-300 text-text-main text-sm"
 									{...register("phone", {
 										required: "Enter your phone number",
@@ -155,7 +155,7 @@ const Contact: React.FC = () => {
 									id="tour_date"
 									type="date"
 									placeholder="MM/DD/YY"
-									autoComplete={'date'}
+									autoComplete={'off'}
 									className="w-full px-5 py-3 bg-canvas-page rounded-xl border border-transparent focus:border-brand-secondary/50 focus:bg-canvas-card focus:ring-4 focus:ring-focus-ring/20 outline-none transition-all duration-300 text-text-main text-sm appearance-none"
 									{...register("date", {
 										required: "Pick a tour date",
@@ -172,7 +172,7 @@ const Contact: React.FC = () => {
 								rows={3}
 								id="message"
 								placeholder="How can we help you?"
-								autoComplete={'message'}
+								autoComplete={'off'}
 								className="w-full px-5 py-3 bg-canvas-page rounded-xl border border-transparent focus:border-brand-secondary/50 focus:bg-canvas-card focus:ring-4 focus:ring-focus-ring/20 outline-none transition-all duration-300 text-text-main resize-none text-sm"
 								{...register("message", {
 									required: "How can we help you?",
@@ -218,19 +218,19 @@ const Contact: React.FC = () => {
 							<div className="bg-brand-primary/10 p-3 rounded-full text-brand-primary">
 								<FiMapPin className="shrink-0 w-5 h-5" />
 							</div>
-							<div><h4 className="font-bold text-sm text-text-main">Location</h4><p className="text-text-muted text-sm">{contact.address}</p></div>
+							<div><h3 className="font-bold text-sm text-text-main">Location</h3><p className="text-text-muted text-sm">{contact.address}</p></div>
 						</div>
 						<div className="flex items-center gap-4 p-4 bg-canvas-card rounded-2xl shadow-soft border border-canvas-alt hover:shadow-md transition-shadow">
 							<div className="bg-brand-primary/10 p-3 rounded-full text-brand-primary">
 								<FiPhone className="shrink-0 w-5 h-5" />
 							</div>
-							<div><h4 className="font-bold text-sm text-text-main">Call Us</h4><p className="text-text-muted text-sm">{contact.phone}</p></div>
+							<div><h3 className="font-bold text-sm text-text-main">Call Us</h3><p className="text-text-muted text-sm">{contact.phone}</p></div>
 						</div>
 						<div className="flex items-center gap-4 p-4 bg-canvas-card rounded-2xl shadow-soft border border-canvas-alt hover:shadow-md transition-shadow">
 							<div className="bg-brand-primary/10 p-3 rounded-full text-brand-primary">
 								<FiMail className="shrink-0 w-5 h-5" />
 							</div>
-							<div><h4 className="font-bold text-sm text-text-main">Email</h4><p className="text-text-muted text-sm">{contact.email}</p></div>
+							<div><h3 className="font-bold text-sm text-text-main">Email</h3><p className="text-text-muted text-sm">{contact.email}</p></div>
 						</div>
 					</div>
 
