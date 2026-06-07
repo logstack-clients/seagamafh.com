@@ -5,7 +5,7 @@
             "has": [
                 {
                     "type": "host",
-                    "value": "://seagamafh.com"
+                    "value": "www.seagamafh.com"
                 }
             ],
             "destination": "https://seagamafh.com/:path*",
