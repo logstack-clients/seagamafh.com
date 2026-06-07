@@ -72,7 +72,7 @@ const { title, description, keywords, canonicalUrl, image, siteName, authors, cr
 				window.dataLayer = window.dataLayer || [];
 				function gtag(){dataLayer.push(arguments);}
 				gtag('js', new Date());
-				gtag('config', '${googleAnalyticsId}');
+				gtag('config', analytics.googleAnalyticsId);
 			</script>
 		)}
 		{analytics.cloudflareToken && (

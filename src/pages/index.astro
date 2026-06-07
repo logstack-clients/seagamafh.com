@@ -12,7 +12,7 @@ import Layout from '@/layouts/Layout.astro';
 ---
 
 <Layout>
-	<Hero client:load />
+	<Hero client:visible />
 
 	<About client:visible />
 
@@ -26,5 +26,5 @@ import Layout from '@/layouts/Layout.astro';
 
 	<Testimonials client:visible />
 
-	<Contact client:load />
+	<Contact client:visible />
 </Layout>
