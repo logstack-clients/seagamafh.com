@@ -102,7 +102,7 @@ const Contact: React.FC = () => {
 									type="text"
 									id="name"
 									placeholder="John Doe"
-									autoComplete={'Full Name'}
+									autoComplete={'name'}
 									className="w-full px-5 py-3 bg-canvas-page rounded-xl border border-transparent focus:border-brand-secondary/50 focus:bg-canvas-card focus:ring-4 focus:ring-focus-ring/20 outline-none transition-all duration-300 text-text-main text-sm"
 									{...register("name", {
 										required: "Full name is required",
@@ -117,7 +117,7 @@ const Contact: React.FC = () => {
 									id="phone"
 									type="tel"
 									placeholder="+1 (555) 000-0000"
-									autoComplete={'Phone Number'}
+									autoComplete={'phone'}
 									className="w-full px-5 py-3 bg-canvas-page rounded-xl border border-transparent focus:border-brand-secondary/50 focus:bg-canvas-card focus:ring-4 focus:ring-focus-ring/20 outline-none transition-all duration-300 text-text-main text-sm"
 									{...register("phone", {
 										required: "Enter your phone number",
@@ -136,7 +136,7 @@ const Contact: React.FC = () => {
 								type="email"
 								id="email"
 								placeholder="johndoe@example.com"
-								autoComplete={'Email Address'}
+								autoComplete={'email'}
 								className="w-full px-5 py-3 bg-canvas-page rounded-xl border border-transparent focus:border-brand-secondary/50 focus:bg-canvas-card focus:ring-4 focus:ring-focus-ring/20 outline-none transition-all duration-300 text-text-main text-sm"
 								{...register("email", {
 									required: "Enter your email",
@@ -155,7 +155,7 @@ const Contact: React.FC = () => {
 									id="tour_date"
 									type="date"
 									placeholder="MM/DD/YY"
-									autoComplete={'Scheduled Tour Date'}
+									autoComplete={'date'}
 									className="w-full px-5 py-3 bg-canvas-page rounded-xl border border-transparent focus:border-brand-secondary/50 focus:bg-canvas-card focus:ring-4 focus:ring-focus-ring/20 outline-none transition-all duration-300 text-text-main text-sm appearance-none"
 									{...register("date", {
 										required: "Pick a tour date",
@@ -172,7 +172,7 @@ const Contact: React.FC = () => {
 								rows={3}
 								id="message"
 								placeholder="How can we help you?"
-								autoComplete={'Additional message'}
+								autoComplete={'message'}
 								className="w-full px-5 py-3 bg-canvas-page rounded-xl border border-transparent focus:border-brand-secondary/50 focus:bg-canvas-card focus:ring-4 focus:ring-focus-ring/20 outline-none transition-all duration-300 text-text-main resize-none text-sm"
 								{...register("message", {
 									required: "How can we help you?",

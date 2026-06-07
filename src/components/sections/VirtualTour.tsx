@@ -195,6 +195,9 @@ const VirtualTour: React.FC = () => {
 										alt={`${activeCategory} view`}
 										width={1080}
 										height={1080}
+										loading="eager"
+										fetchPriority="high"
+										decoding="async"
 										className="w-full h-full object-cover select-none pointer-events-none"/>
 
 									{/* Hotspot Overlay Layer - Only show when focused (center) */}
