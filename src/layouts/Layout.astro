@@ -2,7 +2,8 @@
 import "@/assets/styles/globals.css";
 import SpeedInsights from "@vercel/speed-insights/astro"
 import JsonLd from '@/components/meta/JsonLd';
-import Analytics from '@/components/meta/Analytics';
+//import Analytics from '@/components/meta/Analytics';
+import Analytics from '@vercel/analytics/astro';
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 
@@ -10,7 +11,7 @@ import { constructMetadata } from "@/lib/seo.ts";
 
 const meta = Astro.props.metadata ?? constructMetadata();
 
-const { title, description, keywords, canonicalUrl, image, siteName, authors, creator, publisher, robots, locale, twitterHandle, favicons, manifest } = meta;
+const { title, description, keywords, canonicalUrl, image, siteName, authors, creator, publisher, robots, locale, twitterHandle, favicons, manifest, analytics } = meta;
 ---
 
 <!doctype html>
@@ -64,6 +65,20 @@ const { title, description, keywords, canonicalUrl, image, siteName, authors, cr
 
 		<!-- Manifest -->
 		<link rel="manifest" href={manifest} />
+
+		{analytics.googleAnalyticsId && (
+			<script is:inline
+				src={`https://www.googletagmanager.com/gtag/js?id=${analytics.googleAnalyticsId}`}/>
+			<script is:inline id="google-analytics">
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+				gtag('config', '${googleAnalyticsId}');
+			</script>
+		)}
+		{analytics.cloudflareToken && (
+			<script is:inline defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon={`{"token": "${analytics.cloudflareToken}"}`}/>
+		)}
 
 		<!-- Mobile Web App -->
 		<meta name="mobile-web-app-capable" content="yes" />

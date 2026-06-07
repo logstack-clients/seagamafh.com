@@ -35,5 +35,6 @@ export function constructMetadata({
 		twitterHandle: '@seagamafh',
 		favicons: siteConfig.favicons,
 		manifest: siteConfig.favicons.manifest,
+		analytics: siteConfig.analytics,
 	};
 }
