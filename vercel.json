@@ -1,0 +1,26 @@
+{
+    "redirects": [
+        {
+            "source": "/(:path*)",
+            "has": [
+                {
+                    "type": "host",
+                    "value": "://seagamafh.com"
+                }
+            ],
+            "destination": "https://seagamafh.com/:path*",
+            "permanent": true
+        },
+        {
+            "source": "/(:path*)",
+            "has": [
+                {
+                    "type": "host",
+                    "value": "www.seagam.vercel.app"
+                }
+            ],
+            "destination": "https://seagam.vercel.app/:path*",
+            "permanent": true
+        }
+    ]
+}
