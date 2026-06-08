@@ -26,7 +26,7 @@ const Section: React.FC<SectionProps> = ({ id, className = '', children }) => {
 					}
 				}
 			}}
-			className={`py-12 md:py-16 px-4 md:px-8 max-w-7xl mx-auto overflow-hidden ${className}`}
+			className={`py-12 md:py-16 px-4 md:px-8 max-w-336 mx-auto overflow-hidden ${className}`}
 		>
 			{children}
 		</motion.section>

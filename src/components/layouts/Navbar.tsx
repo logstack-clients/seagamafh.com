@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
 
 	return (
 		<nav className="fixed top-0 left-0 right-0 z-50 bg-canvas-page/90 backdrop-blur-md shadow-soft py-3 lg:py-4 transition-all duration-300">
-			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
+			<div className="max-w-336 mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
 				{/* Logo Section - Prioritized Layout */}
 				<a href="/#home" className="flex items-center gap-2 font-bold text-brand-primary shrink-0 group">
 					<img
@@ -109,7 +109,7 @@ const Navbar: React.FC = () => {
 							<div className="h-px bg-gray-100 my-2" />
 							<a
 								href="/#contact"
-								className="bg-btn-cta text-white text-center py-3 rounded-lg font-bold shadow-md hover:bg-btn-cta-hover transition-colors"
+								className="block bg-btn-cta text-white text-center py-3 rounded-lg font-bold shadow-md hover:bg-btn-cta-hover transition-colors"
 								onClick={() => setIsOpen(false)}>
 								Schedule Tour
 							</a>

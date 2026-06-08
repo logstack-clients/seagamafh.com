@@ -27,7 +27,7 @@
     --color-status-success: #E3F0E6;
     
     /* Shadows */
-    --shadow-soft: 0 8px 30px rgba(0,0,0,0.04);
+    --shadow-soft: 0 8px 30px rgba(0, 0, 0, 0.04);
     --shadow-medium: 0 15px 40px -10px rgba(53, 80, 71, 0.1);
     
     --font-sans: 'Plus Jakarta Sans', sans-serif;
@@ -48,8 +48,8 @@
     
     body {
         scroll-behavior: smooth;
-        /*background-color: #F9F7F2;
-        color: #2D3033;*/
+        background-color: var(--color-canvas-page); /**/
+        color: var(--color-text-main);
         
         transition: all .3s ease;
         font-weight: 400;
@@ -63,13 +63,13 @@
         width: 10px;
     }
     ::-webkit-scrollbar-track {
-        background: #F9F7F2;
+        background: var(--color-canvas-page);
     }
     ::-webkit-scrollbar-thumb {
         background: #CDC9C3;
         border-radius: 5px;
     }
     ::-webkit-scrollbar-thumb:hover {
-        background: #A65B46;
+        background: var(--color-btn-cta);
     }
 }

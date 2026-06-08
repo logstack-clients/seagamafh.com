@@ -1,6 +1,7 @@
 ---
 import { siteConfig } from "@/config/site.config";
-
+import { faq } from '@/config/pages.config';
+import { services, team, testimonials, footer } from '@/config/sections.config';
 /**
  * Renders a Google-friendly JSON-LD script for Local Business SEO.
  * Include this component in your root layout or main landing page.
@@ -8,15 +9,16 @@ import { siteConfig } from "@/config/site.config";
 
 const jsonLd = {
 	"@context": "https://schema.org",
-	"@type": "Residence", // Can also be "LocalBusiness", "MedicalBusiness", or "NursingHome"
+	"@type": "NursingHome", // Can also be "LocalBusiness", "MedicalBusiness", or "NursingHome"
 	"@id": `${siteConfig.url}/#identity`,
-	"name": siteConfig.name,
+	"name": siteConfig.fullName,
 	"legalName": "Seagam Adult Family Home LLC",
 	"description": siteConfig.description,
 	"url": siteConfig.url,
 	"telephone": siteConfig.telephone,
 	"email": siteConfig.email,
 	"image": siteConfig.ogImage,
+    "logo": siteConfig.logo,
 	"address": {
 		"@type": "PostalAddress",
 		"streetAddress": siteConfig.address.streetAddress,
@@ -47,8 +49,149 @@ const jsonLd = {
 		},
 	],
 	"priceRange": siteConfig.priceRange,
-	"sameAs": siteConfig.socials.map((social) => social.href).filter(Boolean)
+	"sameAs": siteConfig.socials.map((social) => social.href).filter(Boolean),
+
+    // Services Offered
+    "makesOffer": services.items.map(service => ({
+            "@type": "Offer",
+            "itemOffered": {
+                "@type": "Service",
+                "name": service.title,
+                "description": service.description
+            }
+        })
+    ),
+    // Reviews
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.7",
+        "reviewCount": "128"
+    },
+    "review": testimonials.items.map(testimonial => ({
+        "@type": "Review",
+        "author": { "@type": "Person", "name": testimonial.name },
+        //"datePublished": "2024-05-10",
+        "reviewBody": testimonial.content,
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+    })),
+    // Staff
+    "employee": team.members.map(person => ({
+        "@type": "Person",
+        "name": person.name,
+        "jobTitle": person.role
+    })),
+    "amenityFeature": [
+        {
+            "@type": "LocationFeatureSpecification",
+            "name": "Wheelchair Accessible",
+            "value": true
+        },
+        {
+            "@type": "LocationFeatureSpecification",
+            "name": "Fire Safety Compliant",
+            "value": true
+        },
+        {
+            "@type": "LocationFeatureSpecification",
+            "name": "Emergency Call System",
+            "value": true
+        }
+    ]
+};
+const webpageJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${siteConfig.url}/#webpage`,
+    "url": siteConfig.url,
+    "name": siteConfig.name,
+    "description": siteConfig.description,
+    "inLanguage": "en",
+    "isPartOf": {
+        "@type": "WebSite",
+        "@id": `${siteConfig.url}/#website`,
+        "name": siteConfig.name,
+        "url": siteConfig.url
+    }
+};
+const localBusinessJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": `${siteConfig.url}/#localbusiness`,
+    "name": siteConfig.name,
+    "description": siteConfig.description,
+    "url": siteConfig.url,
+    "telephone": siteConfig.telephone,
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": siteConfig.address.streetAddress,
+        "addressLocality": siteConfig.address.addressLocality,
+        "addressRegion": siteConfig.address.addressRegion,
+        "postalCode": siteConfig.address.postalCode,
+        "addressCountry": siteConfig.address.addressCountry
+    },
+    "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": siteConfig.geo.latitude,
+        "longitude": siteConfig.geo.longitude
+    },
+    "sameAs": siteConfig.socials.map(s => s.href).filter(Boolean)
+};
+
+const medicalOrgJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "MedicalOrganization",
+    "@id": `${siteConfig.url}/#medicalorg`,
+    "name": siteConfig.name,
+    "description": siteConfig.description,
+    "url": siteConfig.url,
+    "telephone": siteConfig.telephone,
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": siteConfig.address.streetAddress,
+        "addressLocality": siteConfig.address.addressLocality,
+        "addressRegion": siteConfig.address.addressRegion,
+        "postalCode": siteConfig.address.postalCode,
+        "addressCountry": siteConfig.address.addressCountry
+    },
+    "makesOffer": services.items.map(service => ({
+        "@type": "Offer",
+        "itemOffered": {
+            "@type": "MedicalProcedure",
+            "name": service.title,
+            "description": service.description
+        }
+    }))
+};
+const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faq.items.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+        }
+    }))
+};
+
+const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": footer.links.map((crumb, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "item": {
+            "@id": `${siteConfig.url}${crumb.href}`,
+            "name": crumb.text,
+        }
+    }))
 };
 ---
 
 <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)}/>
+<script is:inline type="application/ld+json" set:html={JSON.stringify(webpageJsonLd)}/>
+<script is:inline type="application/ld+json" set:html={JSON.stringify(localBusinessJsonLd)}/>
+<script is:inline type="application/ld+json" set:html={JSON.stringify(medicalOrgJsonLd)}/>
+<script is:inline type="application/ld+json" set:html={JSON.stringify(faqJsonLd)}/>
+<script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)}/>

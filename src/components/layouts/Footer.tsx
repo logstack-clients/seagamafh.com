@@ -155,31 +155,6 @@ const Footer: React.FC = () => {
 						))}
 					</div>
 				</div>
-
-				{/* Bottom Metadata & Legal Column
-				<div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/50">
-					{/ Copyright notice and extra state compliance terms /}
-					<div className="flex flex-col gap-1 text-center md:text-left">
-						<p>{footer.copy}</p>
-						<p className="opacity-70 text-[11px]">
-							Recognized as a Premier Adult Family Provider by the Department of Social and Health Services (DSHS).
-						</p>
-					</div>
-
-					{/ Legal / Policy routing /}
-					<div className="flex flex-wrap justify-center gap-5 sm:gap-6 font-medium">
-						{footer.links.map((link, idx) => (
-							<Link
-								key={idx}
-								href={link.href}
-								className="hover:text-brand-tertiary border-b border-transparent hover:border-brand-tertiary transition-all duration-200 py-0.5"
-							>
-								{link.text}
-							</Link>
-						))}
-					</div>
-				</div>
-				*/}
 			</div>
 		</footer>
 	);

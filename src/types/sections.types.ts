@@ -31,6 +31,8 @@ export interface Caregiver {
 	name: string;
 	role: string;
 	image: string;
+	phone?: string;
+	email?: string;
 }
 
 export interface Testimonial {
