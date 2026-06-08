@@ -28,5 +28,3 @@ pnpm-debug.log*
 
 # ditch & replace with @vercel/analytics/astro
 src/components/meta/Analytics.astro
-
-vercel.json
