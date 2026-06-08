@@ -244,7 +244,9 @@ const Contact: React.FC = () => {
 								loading="lazy"
 								allowFullScreen
 								style={{ border: 0 }}
-								className="transition-all duration-700 hover:grayscale-0 grayscale-[0.15]"/>
+								className="transition-all duration-700 hover:grayscale-0 grayscale-[0.15]"
+								referrerPolicy="no-referrer-when-downgrade"
+							/>
 						) : (
 							<div className="flex h-full w-full items-center justify-center bg-neutral-100 text-sm text-neutral-500">
 								Loading map...
