@@ -77,7 +77,7 @@ const Navbar: React.FC = () => {
 				<button
 					className="md:hidden p-2 text-brand-primary hover:bg-brand-primary/10 rounded-full transition-colors"
 					onClick={() => setIsOpen(!isOpen)}
-					aria-label="Toggle menu">
+					aria-label="Toggle menu" type="button">
 					{isOpen ? <LuX size={24} /> : <LuMenu size={24} />}
 				</button>
 			</div>

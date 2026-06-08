@@ -34,7 +34,7 @@ const FAQ: React.FC = () => {
 						>
 							<button
 								onClick={() => setOpenIndex(openIndex === index ? null : index)}
-								className="w-full flex items-center justify-between p-6 text-left hover:bg-canvas-alt/30 transition-colors" aria-label={`Click to view the answer to "${item.question}"`}>
+								className="w-full flex items-center justify-between p-6 text-left hover:bg-canvas-alt/30 transition-colors" aria-label={`Click to view the answer to "${item.question}"`} type="button">
 								<span className="font-bold text-lg text-text-main pr-8">{item.question}</span>
 								<span className={`shrink-0 p-2 rounded-full ${openIndex === index ? 'bg-brand-primary text-white' : 'bg-canvas-alt text-brand-primary'}`}>
                   {openIndex === index ? <LuMinus size={18} /> : <LuPlus size={18} />}

@@ -82,7 +82,7 @@ const Careers: React.FC = () => {
 							>
 								<button
 									onClick={() => setExpandedJob(expandedJob === job.id ? null : job.id)}
-									className="w-full text-left p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-4" aria-label={`Click to view more details about the ${job.title} job`}>
+									className="w-full text-left p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-4" aria-label={`Click to view more details about the ${job.title} job`} type="button">
 									<div>
 										<h3 className="text-2xl font-bold text-text-main mb-2">{job.title}</h3>
 										<div className="flex flex-wrap gap-4 text-sm text-text-muted font-medium">

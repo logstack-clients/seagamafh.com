@@ -151,7 +151,7 @@ const VirtualTour: React.FC = () => {
 								activeCategory === cat.category
 									? 'text-white shadow-medium scale-105'
 									: 'bg-canvas-card text-text-muted hover:text-brand-primary border border-divider-subtle hover:border-brand-primary/30'
-							}`} aria-label={`Click to view the ${cat.category}`}>
+							}`} aria-label={`Click to view the ${cat.category}`} type="button">
 							{activeCategory === cat.category && (
 								<motion.div
 									layoutId="activeTab"
@@ -232,7 +232,7 @@ const VirtualTour: React.FC = () => {
 														onMouseEnter={() => setShowHotspot(i)}
 														onMouseLeave={() => setShowHotspot(null)}
 														onClick={() => setShowHotspot(showHotspot === i ? null : i)}
-														className="relative w-10 h-10 flex items-center justify-center cursor-pointer" aria-label={`Show Hotspot ${i}`}>
+														className="relative w-10 h-10 flex items-center justify-center cursor-pointer" aria-label={`Show Hotspot ${i}`} type="button">
 														<div className="absolute inset-0 bg-white/30 rounded-full animate-ping" />
 														<div className="absolute inset-1 bg-white/90 backdrop-blur-md rounded-full shadow-[0_0_20px_rgba(255,255,255,0.5)] border border-white flex items-center justify-center transition-transform duration-300 group-hover/hotspot:scale-110">
 															<LuMaximize2 size={16} className="text-brand-primary" />
@@ -265,15 +265,13 @@ const VirtualTour: React.FC = () => {
 							<button
 								onClick={handlePrev}
 								className="pointer-events-auto w-16 h-16 rounded-full bg-black/20 backdrop-blur-lg text-white flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all duration-300 shadow-lg hover:shadow-brand-primary/40 border border-white/20 hover:scale-105 group/nav"
-								aria-label="Previous view"
-							>
+								aria-label="Previous view" type="button">
 								<LuChevronLeft size={28} className="group-hover/nav:-translate-x-0.5 transition-transform" />
 							</button>
 							<button
 								onClick={handleNext}
 								className="pointer-events-auto w-16 h-16 rounded-full bg-black/20 backdrop-blur-lg text-white flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all duration-300 shadow-lg hover:shadow-brand-primary/40 border border-white/20 hover:scale-105 group/nav"
-								aria-label="Next view"
-							>
+								aria-label="Next view" type="button">
 								<LuChevronRight size={28} className="group-hover/nav:translate-x-0.5 transition-transform" />
 							</button>
 						</div>
@@ -292,8 +290,7 @@ const VirtualTour: React.FC = () => {
 											? 'w-8 h-2 bg-white'
 											: 'w-2 h-2 bg-white/40 hover:bg-white/70'
 									}`}
-									aria-label={`Go to image ${idx + 1}`}
-								/>
+									aria-label={`Go to image ${idx + 1}`} type="button"/>
 							))}
 						</div>
 
@@ -329,8 +326,7 @@ const VirtualTour: React.FC = () => {
 							<button
 								onClick={() => setIsLightboxOpen(false)}
 								className="absolute top-6 right-6 z-50 p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-all"
-								aria-label="Close lightbox"
-							>
+								aria-label="Close lightbox" type="button">
 								<LuX size={32} />
 							</button>
 
@@ -368,12 +364,12 @@ const VirtualTour: React.FC = () => {
 								{/* Lightbox Nav Buttons (Desktop) */}
 								<button
 									onClick={handlePrev}
-									className="hidden md:flex absolute left-0 p-4 text-white/50 hover:text-white hover:scale-110 transition-all" aria-label="view previous">
+									className="hidden md:flex absolute left-0 p-4 text-white/50 hover:text-white hover:scale-110 transition-all" aria-label="view previous" type="button">
 									<LuChevronLeft size={48} />
 								</button>
 								<button
 									onClick={handleNext}
-									className="hidden md:flex absolute right-0 p-4 text-white/50 hover:text-white hover:scale-110 transition-all" aria-label="view next">
+									className="hidden md:flex absolute right-0 p-4 text-white/50 hover:text-white hover:scale-110 transition-all" aria-label="view next" type="button">
 									<LuChevronRight size={48} />
 								</button>
 

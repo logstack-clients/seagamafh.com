@@ -38,7 +38,7 @@ const NotFound: React.FC = () => {
 				<div className="flex flex-col sm:flex-row gap-4 justify-center">
 					<button
 						onClick={() => history.back()}
-						className="flex items-center justify-center gap-2 px-8 py-3 rounded-full border-2 border-brand-primary text-brand-primary font-bold hover:bg-brand-primary/5 transition-colors" aria-label="Go back to the previous page">
+						className="flex items-center justify-center gap-2 px-8 py-3 rounded-full border-2 border-brand-primary text-brand-primary font-bold hover:bg-brand-primary/5 transition-colors" aria-label="Go back to the previous page" type="button">
 						<LuArrowLeft size={20} />
 						Go Back
 					</button>
