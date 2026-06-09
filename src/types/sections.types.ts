@@ -93,7 +93,6 @@ export interface ContactContentConfig {
 	address: string;
 	phone: string;
 	email: string;
-	mapAddress: string; // Used for Google Maps Embed
 	form: {
 		labels: {
 			name: string;

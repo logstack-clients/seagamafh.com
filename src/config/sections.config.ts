@@ -231,7 +231,6 @@ export const contact: ContactContentConfig = {
 	address: '21219 102nd Ave SE, Kent, WA 98031', //29306 45th P1 S Auburn, WA 98001
 	phone: '+1 (206) 672-7346',
 	email: 'seagam7@gmail.com',
-	mapAddress: '21219 102nd Ave SE, Kent, WA 98031',
 	form: {
 		labels: {
 			name: 'Full Name',

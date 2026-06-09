@@ -39,9 +39,7 @@ const Contact: React.FC = () => {
 
 		return () => observer.disconnect();
 	}, []);
-	const encodedAddress = encodeURIComponent(contact.mapAddress);
-	//const mapEmbedUrl = `https://maps.google.com/maps?width=100%25&height=600&hl=en&q=${encodedAddress}&t=&z=14&ie=UTF8&iwloc=B&output=embed`;
-	const mapEmbedUrl = `https://maps.google.com/maps?q=${encodedAddress}&z=15&output=embed`;
+	const mapEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3223.8408127!2d-122.20528900000001!3d47.411733899999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54905d387892a851%3A0x3726210e6ba2bb6e!2sSeagam%20AFH%20LLC!5e1!3m2!1sen!2sgm!4v1781009344667!5m2!1sen!2sgm";
 
 	const {
 		register,
