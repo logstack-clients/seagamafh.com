@@ -105,20 +105,20 @@ export const siteConfig: SiteConfig = {
 		noarchive: false,
 		nosnippet: false,
 		notranslate: false,
+		noimageindex: false
+	},
+	googleBot: {
+		index: true,
+		follow: true,
+		'max-video-preview': -1,
+		'max-image-preview': 'large',
+		'max-snippet': -1,
+
+		noarchive: false,
+		nosnippet: false,
+		notranslate: false,
 		noimageindex: false,
-		googleBot: {
-			index: true,
-			follow: true,
-			'max-video-preview': -1,
-			'max-image-preview': 'large',
-			'max-snippet': -1,
-			
-			noarchive: false,
-			nosnippet: false,
-			notranslate: false,
-			noimageindex: false,
-			unavailable_after: 'string'
-		},
+		unavailable_after: 'string'
 	},
 	authors: [
 		{ name: 'Abdoulie Jawara' },

@@ -66,8 +66,6 @@ export interface RobotsConfig {
 	nosnippet?: boolean;
 	notranslate?: boolean;
 	noimageindex?: boolean;
-	
-	googleBot?: GoogleBotConfig;
 }
 
 export interface brand {
@@ -101,6 +99,7 @@ export interface SiteConfig {
 	analytics: AnalyticsConfig; // New GcAnalytics Section
 	favicons: FaviconsConfig;   // New Favicons Section
 	robots: RobotsConfig;
+	googleBot: GoogleBotConfig;
 	authors: { name: string; url?: string }[];
 	creator: string;
 }

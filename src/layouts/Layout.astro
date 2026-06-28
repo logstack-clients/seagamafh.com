@@ -10,7 +10,7 @@ import { constructMetadata } from "@/lib/seo.ts";
 
 const meta = Astro.props.metadata ?? constructMetadata();
 
-const { title, description, keywords, canonicalUrl, image, siteName, authors, creator, publisher, robots, locale, twitterHandle, favicons, manifest } = meta;
+const { title, description, keywords, canonicalUrl, image, siteName, authors, creator, publisher, locale, twitterHandle, favicons, manifest } = meta;
 ---
 
 <!doctype html>
@@ -25,7 +25,7 @@ const { title, description, keywords, canonicalUrl, image, siteName, authors, cr
 		<title>{title}</title>
 		<meta name="description" content={description} />
 		<meta name="keywords" content={keywords?.join(", ")} />
-		<meta name="robots" content={robots} />
+		<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 		<meta name="author" content={authors?.join(", ")} />
 		<meta name="creator" content={creator} />
 		<meta name="publisher" content={publisher} />
@@ -73,9 +73,6 @@ const { title, description, keywords, canonicalUrl, image, siteName, authors, cr
 		<JsonLd />
 		<Analytics/>
 		<SpeedInsights />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet">
 	</head>
 	<body class="bg-canvas-page min-h-screen text-text-main">
 		<Navbar client:load />

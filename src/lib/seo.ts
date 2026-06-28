@@ -31,6 +31,7 @@ export function constructMetadata({
 		creator: siteConfig.creator,
 		publisher: siteConfig.name,
 		robots: siteConfig.robots,
+		googleBot: siteConfig.googleBot,
 		locale: siteConfig.locale,
 		twitterHandle: '@seagamafh',
 		favicons: siteConfig.favicons,
