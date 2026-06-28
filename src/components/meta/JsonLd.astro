@@ -7,10 +7,10 @@ import { services, team, footer } from '@/config/sections.config';
  * Include this component in your root layout or main landing page.
  */
 
-const jsonLd = {
+const localBusinessJsonLd = {
 	"@context": "https://schema.org",
-	"@type": "NursingHome", // Can also be "LocalBusiness", "MedicalBusiness", or "NursingHome"
-	"@id": `${siteConfig.url}/#identity`,
+	"@type": ["LocalBusiness", "MedicalBusiness"], // Can also be "LocalBusiness", "MedicalBusiness", or "NursingHome"
+	"@id": `${siteConfig.url}/#localbusiness`,
 	"name": siteConfig.fullName,
 	"legalName": "Seagam Adult Family Home LLC",
 	"description": siteConfig.description,
@@ -48,7 +48,7 @@ const jsonLd = {
 			"closes": "23:59",
 		},
 	],
-	"priceRange": siteConfig.priceRange,
+	//"priceRange": siteConfig.priceRange,
 	"sameAs": siteConfig.socials.map((social) => social.href).filter(Boolean),
 
     // Services Offered
@@ -91,6 +91,7 @@ const jsonLd = {
         }
     ]
 };
+
 const webpageJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -104,30 +105,10 @@ const webpageJsonLd = {
         "@id": `${siteConfig.url}/#website`,
         "name": siteConfig.name,
         "url": siteConfig.url
+    },
+    "about": {
+        "@id": `${siteConfig.url}/#localbusiness`
     }
-};
-const localBusinessJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": `${siteConfig.url}/#localbusiness`,
-    "name": siteConfig.name,
-    "description": siteConfig.description,
-    "url": siteConfig.url,
-    "telephone": siteConfig.telephone,
-    "address": {
-        "@type": "PostalAddress",
-        "streetAddress": siteConfig.address.streetAddress,
-        "addressLocality": siteConfig.address.addressLocality,
-        "addressRegion": siteConfig.address.addressRegion,
-        "postalCode": siteConfig.address.postalCode,
-        "addressCountry": siteConfig.address.addressCountry
-    },
-    "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": siteConfig.geo.latitude,
-        "longitude": siteConfig.geo.longitude
-    },
-    "sameAs": siteConfig.socials.map(s => s.href).filter(Boolean)
 };
 
 const medicalOrgJsonLd = {
@@ -155,6 +136,7 @@ const medicalOrgJsonLd = {
         }
     }))
 };
+
 const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -182,9 +164,9 @@ const breadcrumbJsonLd = {
 };
 ---
 
-<script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)}/>
-<script is:inline type="application/ld+json" set:html={JSON.stringify(webpageJsonLd)}/>
+
 <script is:inline type="application/ld+json" set:html={JSON.stringify(localBusinessJsonLd)}/>
+<script is:inline type="application/ld+json" set:html={JSON.stringify(webpageJsonLd)}/>
 <script is:inline type="application/ld+json" set:html={JSON.stringify(medicalOrgJsonLd)}/>
 <script is:inline type="application/ld+json" set:html={JSON.stringify(faqJsonLd)}/>
 <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)}/>
