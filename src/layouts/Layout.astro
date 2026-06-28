@@ -31,7 +31,9 @@ const { title, description, keywords, canonicalUrl, image, siteName, authors, cr
 		<meta name="creator" content={creator} />
 		<meta name="publisher" content={publisher} />
 		<meta name="application-name" content={siteName} />
-		<meta name="referrer" content="origin-when-cross-origin" />
+
+		<meta name="referrer" content="strict-origin-when-cross-origin"/>
+		<meta name="format-detection" content="telephone=yes"/>
 
 		<!-- Canonical -->
 		<link rel="canonical" href={canonicalUrl} />

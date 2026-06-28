@@ -1,7 +1,7 @@
 ---
 import { siteConfig } from "@/config/site.config";
 import { faq } from '@/config/pages.config';
-import { services, team, testimonials, footer } from '@/config/sections.config';
+import { services, team, footer } from '@/config/sections.config';
 /**
  * Renders a Google-friendly JSON-LD script for Local Business SEO.
  * Include this component in your root layout or main landing page.
@@ -67,13 +67,6 @@ const jsonLd = {
         "ratingValue": "4.7",
         "reviewCount": "128"
     },
-    "review": testimonials.items.map(testimonial => ({
-        "@type": "Review",
-        "author": { "@type": "Person", "name": testimonial.name },
-        //"datePublished": "2024-05-10",
-        "reviewBody": testimonial.content,
-        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-    })),
     // Staff
     "employee": team.members.map(person => ({
         "@type": "Person",
