@@ -25,7 +25,8 @@ const { title, description, keywords, canonicalUrl, image, siteName, authors, cr
 		<title>{title}</title>
 		<meta name="description" content={description} />
 		<meta name="keywords" content={keywords?.join(", ")} />
-		<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+		<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+		<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 		<meta name="author" content={authors?.join(", ")} />
 		<meta name="creator" content={creator} />
 		<meta name="publisher" content={publisher} />
