@@ -20,7 +20,7 @@ export const siteConfig: SiteConfig = {
 	ogImage: `${baseURL}/icons/og-img.webp`,
 	tcImage: `${baseURL}/icons/tc-img.webp`,
 	keywords: [
-		'Adult Family Home', 'Nursing Home', 'Senior Care', 'Adult Family Care', 'Elderly Nursing Home', 'Senior care, near me', 'Quality Senior Caregiving Services', 'adult family care home near me', 'adult foster care near me', 'senior care home near me', 'elderly care home near me', 'assisted living near me', 'local adult care home', 'neighborhood senior care', 'community senior living', 'residential care near me', 'nursing home near me', 'Senior care home near me'
+		'Adult Family Home', 'Nursing Home', 'Senior Care', 'Adult Family Care', 'Elderly Nursing Home', 'Senior care, near me', 'Quality Senior Caregiving Services', 'adult family care home near me', 'afh near me', 'adult foster care near me', 'senior care home near me', 'elderly care home near me', 'assisted living near me', 'adult family home near me', 'afh in seattle', 'nursing home in seattle', 'senior care in seattle', 'adult family home in seattle', 'nursing home near washington', 'afh in kent', 'afh in washington', 'nursing home in washington', 'senior care in washington', 'adult family home in washington', 'local adult care home', 'neighborhood senior care', 'seagam', 'afh', 'community senior living', 'residential care near me', 'nursing home near me', 'Senior care home near me'
 	],
 	themeColor: '#F9F7F2',
 	
