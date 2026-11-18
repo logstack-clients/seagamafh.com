@@ -4,10 +4,10 @@ import { publicEnv } from "@/env/public";
 export const GET: APIRoute = async () => {
     const pages = [
         { path: "", priority: 1.0, changefreq: "weekly" },
-        { path: "/careers", priority: 0.8, changefreq: "monthly" },
-        { path: "/faq", priority: 0.7, changefreq: "monthly" },
-        { path: "/privacy", priority: 0.3, changefreq: "yearly" },
-        { path: "/terms", priority: 0.3, changefreq: "yearly" },
+        { path: "careers", priority: 0.8, changefreq: "monthly" },
+        { path: "faq", priority: 0.7, changefreq: "monthly" },
+        { path: "privacy", priority: 0.3, changefreq: "yearly" },
+        { path: "terms", priority: 0.3, changefreq: "yearly" },
     ] as const;
     const baseUrl = publicEnv.SITE_BASE_URL.replace(/\/$/, "");
     const xml = `<?xml version="1.0" encoding="UTF-8"?>
